@@ -96,3 +96,32 @@
     
 })(jQuery);
 
+
+
+
+
+
+const searchInput = document.getElementById("searchInput");
+const blogCards = document.querySelectorAll(".blog-card");
+
+searchInput.addEventListener("keyup", function(){
+
+let searchValue = searchInput.value.toLowerCase();
+
+blogCards.forEach(card => {
+
+let title = card.querySelector("h3").textContent.toLowerCase();
+
+if(title.includes(searchValue)){
+card.style.display = "block";
+}
+else{
+card.style.display = "none";
+}
+
+});
+
+});
+
+
+
